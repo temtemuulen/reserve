@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="mn" xml:lang="mn">
+  <head>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Хоолны газрууд — Нүүр</title>
+
+    <!-- ЗӨВ: stylesheet ба script -->
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body>
+    <!-- Skip link -->
+    <a href="#main" class="skip-link">Үндсэн агуулгад шилжих</a>
+
+    <!-- Толгой -->
+    <div class="topbar" role="navigation" aria-label="Толгой навигаци">
+      <div class="container topbar-row">
+        <button class="badge btn btn-ghost" id="openMapBtn" type="button" aria-haspopup="dialog" aria-controls="mapModal">
+          <span class="i" aria-hidden="true">📍</span>
+          <span>Bayanzurkh district, 25 street</span>
+        </button>
+
+        <button class="badge btn btn-ghost" id="openMenuBtn" type="button" aria-haspopup="dialog" aria-controls="offcanvas">
+          <span class="i" aria-hidden="true">☰</span>
+          <span>Цэс</span>
+        </button>
+
+        <div class="search" role="search">
+          <span class="i" aria-hidden="true">🔎</span>
+          <input id="searchInput" type="text" aria-label="Хайх" placeholder="Хайх..." />
+          <button id="clearSearchBtn" class="icon-btn btn btn-secondary" type="button" title="Цэвэрлэх">✖️</button>
+        </div>
+
+        <button id="loginBtn" class="icon-btn btn btn-secondary" type="button" title="Нэвтрэх">👤</button>
+      </div>
+    </div>
+
+    <div class="container" id="main" role="main">
+      <!-- Херо баннер (дарахад листинг рүү гулсаж очно) -->
+      <div class="hero js-scroll-to" data-target="#listings" role="button" tabindex="0" aria-label="Баннерт дарахад жагсаалт руу очно">
+        <div class="bg"></div>
+        <div class="content">
+          <h1>Гоё зураг banner</h1>
+          <p>Ойролцоох ресторан, клаб, баар &amp; лоунж зэргийг нэг дороос.</p>
+          <a href="#" class="cta">Ширээ захиалах ➜</a>
+        </div>
+      </div>
+
+      <!-- Категори картууд (линк нь #) -->
+      <div class="cats" aria-label="Ангиллууд" role="list">
+        <!-- Ресторан -->
+        <div class="cat" role="listitem">
+          <img
+            src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+            alt="Ресторан ангиллын зураг" />
+          <div class="label">
+            <span>Ресторан</span>
+            <span class="chip">Шинэ</span>
+          </div>
+          <!-- Stretched link — картын бүх гадаргуу дардаг -->
+          <a class="stretched-link" href="#" aria-label="Ресторан ангилал руу"></a>
+        </div>
+
+        <!-- Club -->
+        <div class="cat" role="listitem">
+          <img
+            src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+            alt="Club ангиллын зураг" />
+          <div class="label">
+            <span>Club</span>
+            <span class="chip">Шөнийн</span>
+          </div>
+          <a class="stretched-link" href="#" aria-label="Club ангилал руу"></a>
+        </div>
+
+        <!-- Баар & Лоунж -->
+        <div class="cat small" role="listitem">
+          <img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3vQt9UMXxDFYgTqgVhQIlzLwCQhcaICMNXWZiU-IYdIwtt4fL6IyDLmnlRX2Z-5VrgcApVBsyFWHh2-NcYF7nCRRqDTM-35ejidaQUve5ZRktXchbOKCzEXv_Oq8scCz-5k-EcAitPpTlnNKbuasG50zFHUMxEGIPyhBuq-w7Vs1hdnBijOSKp7OpUICa/s1600/image%20%281%29.png"
+            alt="Баар ба Лоунж ангиллын зураг" />
+          <div class="label">
+            <span>Баар &amp; Лоунж</span>
+            <span class="chip">Топ</span>
+          </div>
+          <a class="stretched-link" href="#" aria-label="Баар ба Лоунж ангилал руу"></a>
+        </div>
+      </div>
+
+      <!-- Листинг -->
+      <h2 class="section-title" id="listings">Итали ресторан</h2>
+
+      <div class="cards" role="list" aria-label="Ресторан жагсаалт">
+        <!-- Карт 1 -->
+        <div class="card" role="listitem" data-name="Veranda" data-category="italian">
+          <div class="photo">
+            <img
+              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&amp;w=1400&amp;auto=format&amp;fit=crop"
+              alt="Veranda ресторан дотор харагдац" />
+            <div class="badge-top">🍝 Итали</div>
+          </div>
+          <div class="body">
+            <h3 class="name">Veranda</h3>
+            <div class="meta">
+              <span class="star">★ 4.6</span>
+              <span class="dot" aria-hidden="true"></span>
+              <span class="loc">📍 Bayanzurkh district, 26 street</span>
+              <span class="distance">🏁 700M</span>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="#">Дэлгэрэнгүй</a>
+              <a class="btn btn-outline" href="#">Захиалах</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карт 2 -->
+        <div class="card" role="listitem" data-name="Veranda Central" data-category="italian">
+          <div class="photo">
+            <img
+              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&amp;w=1400&amp;auto=format&amp;fit=crop"
+              alt="Veranda Central ресторан дотор харагдац" />
+            <div class="badge-top">🍝 Итали</div>
+          </div>
+          <div class="body">
+            <h3 class="name">Veranda Central</h3>
+            <div class="meta">
+              <span class="star">★ 4.6</span>
+              <span class="dot" aria-hidden="true"></span>
+              <span class="loc">📍 Bayanzurkh district, 26 street</span>
+              <span class="distance">🏁 700M</span>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="#">Дэлгэрэнгүй</a>
+              <a class="btn btn-outline" href="#">Захиалах</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карт 3 -->
+        <div class="card" role="listitem" data-name="Veranda East" data-category="italian lounge">
+          <div class="photo">
+            <img
+              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&amp;w=1400&amp;auto=format&amp;fit=crop"
+              alt="Veranda East ресторан дотор харагдац" />
+            <div class="badge-top">🍝 Итали</div>
+          </div>
+          <div class="body">
+            <h3 class="name">Veranda East</h3>
+            <div class="meta">
+              <span class="star">★ 4.6</span>
+              <span class="dot" aria-hidden="true"></span>
+              <span class="loc">📍 Bayanzurkh district, 26 street</span>
+              <span class="distance">🏁 700M</span>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="#">Дэлгэрэнгүй</a>
+              <a class="btn btn-outline" href="#">Захиалах</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-pad"></div>
+    </div>
+
+    <!-- (Сонголтоор) Off-canvas цэс -->
+    <div id="offcanvas" class="offcanvas" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="offcanvasTitle">
+      <div class="offcanvas-panel">
+        <div class="offcanvas-header">
+          <h2 id="offcanvasTitle">Цэс</h2>
+          <button id="closeMenuBtn" class="icon-btn btn btn-ghost" type="button" aria-label="Хаах">✖️</button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="menu-list" role="list">
+            <li role="listitem"><a class="menu-link btn btn-ghost" href="#">Нүүр</a></li>
+            <li role="listitem"><a class="menu-link btn btn-ghost" href="#">Ресторан</a></li>
+            <li role="listitem"><a class="menu-link btn btn-ghost" href="#">Club</a></li>
+            <li role="listitem"><a class="menu-link btn btn-ghost" href="#">Баар &amp; Лоунж</a></li>
+          </ul>
+        </div>
+      </div>
+      <button class="overlay" id="closeMenuOverlay" type="button" aria-hidden="true" tabindex="-1"></button>
+    </div>
+
+    <!-- (Сонголтоор) Map modal -->
+    <div id="mapModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="mapTitle">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h2 id="mapTitle">Байршлын зураг</h2>
+          <button id="closeMapBtn" class="icon-btn btn btn-ghost" type="button" aria-label="Хаах">✖️</button>
+        </div>
+        <div class="modal-body">
+          <iframe
+            class="map-frame"
+            title="OpenStreetMap"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=106.81%2C47.88%2C107.10%2C47.97&amp;layer=mapnik">
+          </iframe>
+        </div>
+      </div>
+      <button class="overlay" id="closeMapOverlay" type="button" aria-hidden="true" tabindex="-1"></button>
+    </div>
+  </body>
+</html>

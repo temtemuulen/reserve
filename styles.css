@@ -1,0 +1,167 @@
+/* ======= Суурь хувьсагч ======= */
+:root{
+  --bg:#f5f6f8;
+  --surface:#ffffff;
+  --text:#1f2328;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --elev:0 6px 16px rgba(0,0,0,0.06);
+  --brand:#ff4d6d;
+  --brand-2:#ffd2db;
+  --chip:rgba(255,255,255,0.12);
+  --chip-b:#ffffff59;
+  --focus:#2563eb;
+}
+
+/* ======= Reset ======= */
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans","Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji",sans-serif;
+  line-height:1.5;
+}
+img{max-width:100%;height:auto;border:0;display:block}
+a{text-decoration:none;color:inherit}
+button{font:inherit;color:inherit;background:none;border:none;padding:0;cursor:pointer}
+:focus{outline:3px solid var(--focus);outline-offset:2px}
+:focus:not(:focus-visible){outline:none}
+
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 16px}
+.bottom-pad{height:28px}
+.skip-link{
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{position:static;width:auto;height:auto;padding:8px 12px;background:var(--surface);border:1px solid var(--border);border-radius:8px}
+
+/* ======= Topbar ======= */
+.topbar{position:sticky;top:0;z-index:50;background:var(--surface);box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+.topbar-row{height:68px;display:flex;align-items:center;gap:12px}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;border-radius:999px;
+  padding:10px 14px;font-size:14px;white-space:nowrap;background:#f1f2f6;color:#111827;
+}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;transition:transform .12s ease,box-shadow .2s ease;will-change:transform;overflow:hidden}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-primary{background:#ff4d00;color:#fff;padding:10px 14px;box-shadow:0 8px 18px rgba(255,77,109,0.35)}
+.btn-outline{background:transparent;color:var(--text);padding:10px 14px;border:1px solid #ff4d00}
+.btn-ghost{background:var(--surface);border:1px solid #ff4d00;padding:10px 14px}
+.btn-secondary{background:#fff;color:var(--brand);border:1px solid #ff4d00}
+.icon-btn{width:40px;height:40px;border-radius:12px;background:var(--surface);color:var(--brand);border:1px solid #ff4d00}
+.i{display:inline-block}
+/* --- ЖИЖИГ ТОВЧ (CTA SIZE DOWN) --- */
+.btn-sm{
+  padding:8px 12px;      /* урт/өргөнийг багасгав */
+  font-size:14px;        /* шрифтыг арай жижигрүүлэв */
+  line-height:1.1;
+  border-radius:999px;   /* бөөрөнхий хэвээр */
+}
+
+/* Хэрэв баннерын CTA-г дангаар нь бага зэрэг элегант харагдуулахыг хүсвэл: */
+@media (min-width: 768px){
+  .hero .cta.btn-sm{ padding:10px 14px; font-size:15px; }
+}
+/* Ripple effect */
+.btn .ripple{
+  position:absolute;border-radius:999px;background:rgba(0,0,0,0.12);
+  transform:scale(0);animation:ripple .6s ease-out;pointer-events:none;
+}
+@keyframes ripple{to{transform:scale(12);opacity:0}}
+
+/* ======= Hero ======= */
+.hero{position:relative;overflow:hidden;border-radius:8px;margin:16px 0;background:#111;height:220px;cursor:pointer}
+.hero .bg{
+  position:absolute;left:0;top:0;right:0;bottom:0;
+  background:url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSEykUIdkq8vCtPnjvhk4-8FUwugEj7aKGZu478tpo0W77n7TARd297Buv_ktQUxH2VDMOsOzsJCTabcdIldV1Pgb-JBnQPAhV3A_jzme33tYrBXfsZlqhKwgs_89lfaS_MWeGJwkTGT2XWQWv0FYU1529Exm2panYjtvGZmEejT3iXthQFcfU-5yu30fm/s1600/image.png') center/cover no-repeat;
+  filter:brightness(.75)
+}
+.hero .content{position:relative;z-index:1;color:#fff;height:100%;display:flex;flex-direction:column;justify-content:center;padding:24px}
+.hero h1{margin:0 0 8px 0;font-size:32px;font-weight:800;letter-spacing:.2px;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+.hero p{margin:0 0 16px 0;opacity:.9}
+/* Хуучин том хэмжээг дарж жижигрүүлнэ */
+.hero .cta{
+  padding:8px 12px;
+  font-size:14px;
+  box-shadow:0 6px 14px rgba(255,77,109,0.35);
+}
+/* ======= Categories ======= */
+.cats{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin:18px 0}
+.cat{grid-column:span 6;position:relative;border-radius:16px;overflow:hidden;background:#222;height:130px;border:2px solid #ff91a4;box-shadow:0 10px 20px rgba(17,24,39,.18);display:block}
+.cat.small{height:94px;grid-column:span 4;border-color:#ff91a4}
+.cat img{width:100%;height:100%;object-fit:cover;filter:brightness(.85)}
+.cat .label{
+  position:absolute;left:12px;bottom:10px;right:12px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6);
+  font-weight:800;font-size:22px;letter-spacing:.2px;display:flex;align-items:center;justify-content:space-between
+}
+.chip{background:var(--chip);border:1px solid var(--chip-b);padding:6px 10px;border-radius:10px;font-weight:700;font-size:12px}
+/* Stretched link — картын бүх гадаргуу дардаг */
+.cat{position:relative}
+.stretched-link{position:absolute;left:0;top:0;right:0;bottom:0;text-indent:-9999px;overflow:hidden}
+
+/* ======= Section title ======= */
+.section-title{margin:8px 0 12px 0;font-weight:800;font-size:22px;color:var(--text)}
+
+/* ======= Cards ======= */
+.cards{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+.card{grid-column:span 4;background:var(--surface);border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--elev)}
+.card .photo{position:relative;height:160px;overflow:hidden}
+.card .photo img{width:100%;height:100%;object-fit:cover;transform:scale(1);transition:transform .5s ease}
+.card:hover .photo img{transform:scale(1.05)}
+.badge-top{position:absolute;left:10px;top:10px;background:#ffffff;color:#111827;padding:6px 10px;border-radius:999px;font-size:12px;box-shadow:0 4px 10px rgba(0,0,0,.15);border:1px solid var(--border)}
+.card .body{padding:12px}
+.name{font-weight:800;font-size:16px;margin:0 0 6px 0}
+.meta{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}
+.star{color:#f59e0b;font-weight:800}
+.dot{width:4px;height:4px;background:#d1d5db;border-radius:50%}
+.distance{margin-left:auto;background:#f3f4f6;border:1px solid var(--border);padding:6px 8px;border-radius:999px;font-size:12px;color:var(--muted);display:inline-flex;align-items:center;gap:6px}
+.loc{display:inline-flex;align-items:center;gap:6px;color:#ff4d00}
+.actions{display:flex;gap:8px;margin-top:10px}
+
+/* ======= Off-canvas ======= */
+.offcanvas{position:fixed;inset:0;z-index:60;display:none}
+.offcanvas[aria-hidden="false"]{display:block}
+.offcanvas .overlay{position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.offcanvas-panel{
+  position:absolute;left:0;top:0;bottom:0;width:280px;background:var(--surface);
+  border-right:1px solid var(--border);transform:translateX(-100%);transition:transform .25s ease
+}
+.offcanvas[aria-hidden="false"] .offcanvas-panel{transform:none}
+.offcanvas-header{display:flex;align-items:center;justify-content:space-between;padding:12px;border-bottom:1px solid var(--border)}
+.offcanvas-body{padding:12px}
+.menu-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.menu-link{justify-content:flex-start;width:100%}
+
+/* ======= Modal (map) ======= */
+.modal{position:fixed;inset:0;z-index:70;display:none}
+.modal[aria-hidden="false"]{display:block}
+.modal .overlay{position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.modal-dialog{
+  position:relative;z-index:1;margin:40px auto;background:var(--surface);width:min(900px,92%);
+  border-radius:14px;border:1px solid var(--border);box-shadow:var(--elev);overflow:hidden
+}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--border)}
+.modal-body{padding:0}
+.map-frame{display:block;border:0;width:100%;height:420px}
+
+/* ======= Responsive ======= */
+@media (max-width:1024px){
+  .card{grid-column:span 6}
+  .cat.small{grid-column:span 6}
+}
+@media (max-width:700px){
+  .topbar-row{flex-wrap:wrap;height:auto;padding:10px 0}
+  .search{order:5;width:100%}
+  .hero{height:200px}
+  .cats{grid-template-columns:repeat(6,1fr)}
+  .cat{grid-column:span 6}
+  .cat.small{grid-column:span 3}
+  .cards{grid-template-columns:repeat(6,1fr)}
+  .card{grid-column:span 6}
+}
+
+/* ======= Search box ======= */
+.search{
+  flex:1 1 auto;display:flex;align-items:center;gap:10px;background:#f3f4f6;border-radius:999px;padding:10px 14px;min-width:160px;border:1px solid #eef0f4
+}
+.search input{border:0;outline:0;background:transparent;width:100%;font-size:14px;color:var(--text)}
